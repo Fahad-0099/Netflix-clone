@@ -1,8 +1,7 @@
 FROM node:20.17.0 AS builder
-
 WORKDIR /app
 
-# Accept the API key before running the build step to break cache if the key changes
+# Accept the API key argument immediately to break the Docker build cache
 ARG TMDB_V3_API_KEY
 ENV VITE_APP_TMDB_V3_API_KEY=${TMDB_V3_API_KEY}
 ENV VITE_APP_API_ENDPOINT_URL=https://themoviedb.org
